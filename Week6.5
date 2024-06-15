@@ -1,0 +1,7 @@
+n=int(input())
+frequency ={}
+for _ in range(n):
+    num=int(input())
+    frequency[num]=frequency.get(num,0)+1
+for num, freq in frequency.items():
+    print(f"{num} occurs {freq} times")
