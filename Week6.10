@@ -1,0 +1,22 @@
+def merge_arrays(arr1,arr2):
+    merged_set = set(arr1)
+   
+    merged_set.update(arr2)
+   
+    merged_list = sorted(list(merged_set))
+   
+    return merged_list
+   
+n1= int(input())
+arr1 = []
+for _ in range(n1):
+    arr1.append(int(input()))
+   
+n2= int(input())
+arr2 = []
+for _ in range(n2):
+    arr2.append(int(input()))
+   
+merged_array = merge_arrays(arr1,arr2)
+for num in merged_array:
+    print(num, end=" ")
