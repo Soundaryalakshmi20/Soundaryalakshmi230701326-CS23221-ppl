@@ -1,0 +1,8 @@
+def ispowof3(n):
+    if n<=0:
+        return False
+    elif n%3==0:
+        return ispowof3(n//3)
+    return n==1
+n=int(input())
+print(ispowof3(n))
