@@ -1,0 +1,9 @@
+n=int(input())
+num=n+1
+a=num//2
+while(a*a>num):
+     a=(a+num//a)//2
+if(a*a==num):
+     print("Yes")
+else:
+     print("No")
