@@ -1,0 +1,14 @@
+n=int(input())
+nums = [int(input()) for _ in range(n)]
+strictly_increasing = all(nums[i] < nums[i + 1] for i in range(len(nums) - 1))
+strictly_decreasing = all(nums[i] > nums[i + 1] for i in range(len(nums) - 1))
+for i in range(len(nums)):
+    sublist = nums[:i] + nums[i+1:]
+    if all(sublist[j] < sublist[j + 1] for j in range(len(sublist) - 1)):
+        strictly_increasing_after_removal = True
+        break
+else:
+    strictly_increasing_after_removal = False
+
+
+print(strictly_increasing or strictly_decreasing or strictly_increasing_after_removal)
