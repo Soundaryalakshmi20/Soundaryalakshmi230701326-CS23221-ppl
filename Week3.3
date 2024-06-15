@@ -1,0 +1,27 @@
+x=float(input())
+a=x*1.20
+b=x*1.50
+c=x*1.80
+d=x*2.00
+if(x<=199):
+    if(a<100):
+        print("100.00")
+    else:
+        print("%.2f"%(a))
+elif(x>=200 and x<400):
+    if(b>=400):
+        print("%.2f"%((b*0.15)+b))
+    else:
+        print("%.2f"%(b))
+elif(x>=400 and x<600):
+    if(c>=400):
+        print("%.2f"%((c*0.15)+c))
+    else:
+        print("%.2f"%(c))
+elif(x>=600):
+    if(d>=400):
+        print("%.2f"%((d*0.15)+d))
+    else:
+            print("%.2f"%(d))
+        
+        
