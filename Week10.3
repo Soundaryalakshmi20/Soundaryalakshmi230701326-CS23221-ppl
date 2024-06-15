@@ -1,0 +1,23 @@
+def has_sum(arr, K):
+    # Create a set to store the seen elements
+    seen = set()
+    
+    # Iterate through the array
+    for num in arr:
+        # If the complement of the current number exists in the set,
+        # it means there are two numbers that sum up to K
+        if K - num in seen:
+            return "Yes"
+        # Add the current number to the set
+        seen.add(num)
+    
+    # If no such pair is found
+    return "No"
+
+# Input
+n = int(input())
+arr = list(map(int, input().split()))
+K = int(input())
+
+# Output
+print(has_sum(arr, K))
