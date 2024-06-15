@@ -1,0 +1,12 @@
+def print_distinct_elements(n, arr):
+    distinct_elements = set(arr)  # Using a set to store only unique elements
+    print(*distinct_elements)  # Unpacking the set and printing the distinct elements
+
+# Input
+n = int(input())
+arr = []
+for _ in range(n):
+    arr.append(int(input()))
+
+# Calling the function
+print_distinct_elements(n, arr)
