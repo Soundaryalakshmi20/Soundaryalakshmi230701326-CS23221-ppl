@@ -1,0 +1,20 @@
+def one_row(words):
+    row1=set("qwertyuiop")
+    row2=set("asdfghjkl")
+    row3=set("zxcvbnm")
+    def ty_one_row(word):
+        word_set=set(word.lower())
+        return word_set.issubset(row1)or word_set.issubset(row2) or word_set.issubset(row3)
+    result=[word for word in words if ty_one_row(word)]
+    if not result:
+        return "No words" 
+        
+    result_string='\n'.join(result)
+    return result_string
+       
+n=int(input())
+words=[]
+for i in range(n):
+    ele=input()
+    words.append(ele)
+print(one_row(words))
