@@ -1,0 +1,23 @@
+def find_peaks(n, A):
+    peaks = []
+    
+    for i in range(n):
+        if i == 0:  # First element
+            if n == 1 or A[i] >= A[i+1]:
+                peaks.append(A[i])
+        elif i == n-1:  # Last element
+            if A[i-1] <= A[i]:
+                peaks.append(A[i])
+        else:  # Middle elements
+            if A[i-1] <= A[i] >= A[i+1]:
+                peaks.append(A[i])
+    
+    return peaks
+
+# Read input values
+n = int(input())
+A = list(map(int, input().split()))
+
+# Find and print peaks
+peaks = find_peaks(n, A)
+print(" ".join(map(str, peaks)))
