@@ -1,0 +1,15 @@
+def main():
+    try:
+        num1 = float(input())
+        num2 = float(input())
+        
+        if num2 == 0:
+            print("Error: Cannot divide or modulo by zero.")
+        else:
+            division_result = num1 / num2
+            print(division_result)
+    except ValueError:
+        print("Error: Non-numeric input provided.")
+
+if __name__ == "__main__":
+    main()
