@@ -1,0 +1,32 @@
+import csv
+import sys
+
+def calculate_average_marks(input_data):
+    # Read the data using csv.DictReader to handle varying column order
+    reader = csv.DictReader(input_data, delimiter=' ')
+    total_marks = 0
+    student_count = 0
+
+    for row in reader:
+        # Accumulate total marks and count the students
+        total_marks += int(row['MARKS'])
+        student_count += 1
+
+    # Calculate average
+    average_marks = total_marks / student_count if student_count else 0
+
+    # Print the result formatted to two decimal places
+    print(f"{average_marks:.2f}")
+
+if __name__ == "__main__":
+    # Read the input from standard input (simulating the input from the problem statement)
+    input_data = sys.stdin.read().splitlines()
+    n = int(input_data[0])  # Number of students
+    column_headers = input_data[1]  # Column headers
+    student_data = input_data[2:n+2]  # Student data
+
+    # Prepare the input for csv.DictReader
+    input_csv = [column_headers] + student_data
+
+    # Calculate and print the average marks
+    calculate_average_marks(input_csv)
