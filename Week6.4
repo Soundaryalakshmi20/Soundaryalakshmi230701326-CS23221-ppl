@@ -1,0 +1,15 @@
+a=[]
+b=[]
+x=0
+y=int(input())
+for i in range(y):
+    c=int(input())
+    for i in range(c):
+        a.append(int(input()))
+    c=int(input())
+    for i in range(c):
+        x=int(input())
+        if(x in a):
+            b.append(x)
+for i in b:
+    print(i,end=" ")
