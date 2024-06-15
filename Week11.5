@@ -1,0 +1,26 @@
+import math
+
+def calculate_square_root():
+    user_input = input()
+    
+    try:
+        # Attempt to convert the input to a float
+        number = float(user_input)
+        
+        if number < 0:
+            # Raise a ValueError for negative numbers
+            raise ValueError("Cannot calculate the square root of a negative number.")
+        
+        # Calculate the square root
+        sqrt_result = math.sqrt(number)
+        print(f"The square root of {number} is {sqrt_result:.2f}")
+        
+    except ValueError as ve:
+        # Handle both the conversion error and the custom negative number error
+        if "could not convert string to float" in str(ve):
+            print(f"Error: could not convert string to float")
+        else:
+            print(f"Error: {ve}")
+    
+# Run the function
+calculate_square_root()
