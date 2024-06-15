@@ -1,0 +1,10 @@
+s=input()
+n=s.lower()
+broken=input()
+b=set(broken)
+words=n.split()
+c=0
+for i in words:
+    if all(char not in broken for char in i):
+        c+=1
+print(c)
