@@ -1,0 +1,19 @@
+def productDigits(n):
+    a = str(n)
+    s = 1  # product of digits at even positions
+    p = 0  # sum of digits at odd positions
+    
+    for i in range(len(a)):
+        if (i + 1) % 2 == 0:  # Even position (2nd, 4th, 6th, ...)
+            s *= int(a[i])
+        else:  # Odd position (1st, 3rd, 5th, ...)
+            p += int(a[i])
+    
+    if p == 0:
+        return "False"
+    if s % p == 0:
+        return "True"
+    else:
+        return "False"
+
+
