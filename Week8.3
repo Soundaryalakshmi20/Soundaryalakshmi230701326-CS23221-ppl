@@ -1,0 +1,25 @@
+n = int(input())
+student_dict = {}
+for _ in range(n):
+    student_info = input().split()
+    name, test, assignment, lab = student_info
+    student_dict[name] = (int(test), int(assignment), int(lab))
+
+average_scores = {name: (test + assignment + lab) / 3 for name, (test, assignment, lab) in student_dict.items()}
+
+highest_average = max(average_scores.values())
+highest_average_students = [name for name, avg in average_scores.items() if avg == highest_average]
+
+highest_assignment = max(student_dict.values(), key=lambda x: x[1])[1]
+highest_assignment_students = [name for name, (_, assignment, _) in student_dict.items() if assignment == highest_assignment]
+
+lowest_lab = min(student_dict.values(), key=lambda x: x[2])[2]
+lowest_lab_students = [name for name, (_, _, lab) in student_dict.items() if lab == lowest_lab]
+
+lowest_average = min(average_scores.values())
+lowest_average_students = [name for name, avg in average_scores.items() if avg == lowest_average]
+
+print(" ".join(highest_average_students))
+print(" ".join(highest_assignment_students))
+print(" ".join(sorted(lowest_lab_students)))
+print(" ".join(lowest_average_students))
