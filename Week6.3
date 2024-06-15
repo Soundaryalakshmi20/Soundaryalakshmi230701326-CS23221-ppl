@@ -1,0 +1,16 @@
+n=int(input())
+lst = [int(input()) for _ in range(n)]
+element_to_search = int(input())
+locations = []
+count = 0
+for i,num in enumerate(lst,1):
+    if num== element_to_search:
+        locations.append(i)
+        count += 1
+       
+if count>0:
+    for location in locations:
+        print(f"{element_to_search} is present at location {location}.")
+    print(f"{element_to_search} is present {count} times in the array.")
+else:
+    print(f"{element_to_search} is not present in the array.")
