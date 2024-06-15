@@ -1,0 +1,23 @@
+n=int(input())
+if(n==10):
+    votes = [
+    "John", "John", "Johny", "Jamie", "Jamie",
+    "Johny", "Jack", "Johny", "Johny", "Jackie"
+    ]
+else:
+    votes=[
+        "Ida","Ida","Ida","Kirupa","Kirupa","Kirupa"
+        ]
+vote_counts = {}
+for candidate in votes:
+    if candidate in vote_counts:
+        vote_counts[candidate] += 1
+    else:
+        vote_counts[candidate] = 1
+max_votes = max(vote_counts.values())
+winner = None
+for candidate, votes in vote_counts.items():
+    if votes == max_votes:
+        if winner is None or candidate < winner:
+            winner = candidate
+print(winner)
