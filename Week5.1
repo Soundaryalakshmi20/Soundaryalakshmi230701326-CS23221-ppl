@@ -1,0 +1,11 @@
+# Set of keywords
+keywords = {'break', 'case', 'continue', 'default', 'defer', 'else', 'for', 'func', 'goto',  'map', 'range', 'return', 'struct', 'type', 'var'}
+
+# Take input from user
+word = input().strip()
+
+# Check if the word is a keyword
+if word.lower() in keywords:
+    print(word, 'is a keyword')
+else:
+    print(word, 'is not a keyword')
