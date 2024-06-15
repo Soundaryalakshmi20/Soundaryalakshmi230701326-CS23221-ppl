@@ -1,0 +1,28 @@
+def zip_lists(list1, list2):
+    # Zip the lists and concatenate the elements using list comprehension
+    zipped_list = [x + y for x, y in zip(list1, list2)]
+    return zipped_list
+
+def main():
+    m = int(input())
+    n = int(input())
+
+    list1 = []
+    list2 = []
+
+    
+    for _ in range(m):
+        row = [int(input()) for _ in range(n)]
+        list1.append(row)
+
+    
+    for _ in range(m):
+        row = [int(input()) for _ in range(n)]
+        list2.append(row)
+
+    zipped_list = zip_lists(list1, list2)
+    print(zipped_list)
+
+if __name__ == "__main__":
+    main()
+    
