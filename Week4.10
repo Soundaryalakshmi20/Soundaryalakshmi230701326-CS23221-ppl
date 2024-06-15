@@ -1,0 +1,13 @@
+n=int(input())
+if n==1:
+   print("0")
+elif n==2:
+   print("1")
+else:
+   fp=0
+   fc=1
+   for i in range(3,n+1):
+        fn=fp+fc
+        fp=fc
+        fc=fn
+     print(fc)   
